@@ -1,8 +1,7 @@
-FROM bu5hm4n/efl-ready-docker-archlinux
+FROM stefanschmidt1/ci-support-files:Archlinux
 
 # Install dependencies from enlightenment
 
-run pacman --noconfirm -S desktop-file-utils ttf-dejavu xcb-util-keysyms pixman pam mesa hicolor-icon-theme
 
 RUN rm -rf efl
 
@@ -16,16 +15,4 @@ RUN cd efl && ./autogen.sh --prefix /usr/ && make all && make install
 
 RUN ldconfig
 RUN cd ..
-
-# BUILD terminology
-
-RUN cd terminology && ./autogen.sh --prefix /usr/ && make all && make install
-
-RUN ldconfig
-RUN cd ..
-
-# BUILD enlightenment
-
-RUN cd enlightenment && ./autogen.sh --prefix /usr/ && make all && make install
-RUN ldconfig
 
