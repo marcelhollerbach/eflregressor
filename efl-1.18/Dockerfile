@@ -5,7 +5,7 @@ FROM stefanschmidt1/ci-support-files:Archlinux
 
 RUN rm -rf efl
 
-RUN git clone --depth 1 -b v1.18.0 https://git.enlightenment.org/core/efl.git
+RUN git clone --depth 1 -b v1.18.5 https://git.enlightenment.org/core/efl.git
 
 # BUILD EFL
 
